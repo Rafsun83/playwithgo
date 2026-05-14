@@ -1,7 +1,5 @@
-<<<<<<< HEAD
 # playwithgo
 This repo contain my learning curve of golang.
-=======
 # Project playwithgo
 
 One Paragraph of project description goes here
@@ -55,4 +53,3 @@ Clean up binary from the last build:
 ```bash
 make clean
 ```
->>>>>>> 877a908 (Initial commit)
