@@ -1,14 +1,14 @@
-package server
+package handlers
 
 import (
 	"net/http"
 
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
-	"playwithgo/internal/handlers"
+	"playwithgo/internal/repository"
 )
 
-func (s *Server) RegisterRoutes() http.Handler {
+func RegisterRoutes(db repository.Service) http.Handler {
 	r := gin.Default()
 
 	r.Use(cors.New(cors.Config{
@@ -18,7 +18,7 @@ func (s *Server) RegisterRoutes() http.Handler {
 		AllowCredentials: true,
 	}))
 
-	h := &handlers.Handler{DB: s.db}
+	h := &Handler{DB: db}
 
 	r.GET("/", h.HelloWorldHandler)
 	r.GET("/health", h.HealthHandler)
