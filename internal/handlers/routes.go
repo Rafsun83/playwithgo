@@ -3,9 +3,10 @@ package handlers
 import (
 	"net/http"
 
+	"playwithgo/internal/repository"
+
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
-	"playwithgo/internal/repository"
 )
 
 func RegisterRoutes(db repository.Service) http.Handler {
